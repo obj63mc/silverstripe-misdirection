@@ -30,7 +30,6 @@
 				"src/forms/",
 				"src/middleware/",
 				"src/objects/",
-				"src/filters/",
 				"src/services/"
 			],
 			"nglasl\\misdirection\\tests\\": "tests/"
