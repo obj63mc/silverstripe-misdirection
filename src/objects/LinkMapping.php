@@ -153,7 +153,7 @@ class LinkMapping extends DataObject {
 			'MappedLinkHeader',
 			'Mapping',
 			3
-		), 'LinkType');
+		), $fields->dataFieldByName('LinkType'));
 
 		// Retrieve the mapped link configuration as a single grouping.
 
