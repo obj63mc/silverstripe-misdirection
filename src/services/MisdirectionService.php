@@ -27,7 +27,7 @@ class MisdirectionService {
 	 *	@return string
 	 */
 
-	public static function unify_URL($URL) {
+	public static function unify_URL($URL = "") {
 
 		return strtolower(trim($URL, ' ?/'));
 	}
@@ -39,7 +39,7 @@ class MisdirectionService {
 	 *	@return boolean
 	 */
 
-	public static function is_external_URL($URL) {
+	public static function is_external_URL($URL = "") {
 
 		$URL = trim($URL, '/?!"#$%&\'()*+,-.@:;<=>[\\]^_`{|}~');
 		return preg_match('%^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@|\d{1,3}(?:\.\d{1,3}){3}|(?:(?:[a-z\d\x{00a1}-\x{ffff}]+-?)*[a-z\d\x{00a1}-\x{ffff}]+)(?:\.(?:[a-z\d\x{00a1}-\x{ffff}]+-?)*[a-z\d\x{00a1}-\x{ffff}]+)*(?:\.[a-z\x{00a1}-\x{ffff}]{2,6}))(?::\d+)?(?:[^\s]*)?$%iu', $URL);
@@ -83,7 +83,7 @@ class MisdirectionService {
 	 *	@return link mapping
 	 */
 
-	public function getMapping($URL, $host = null) {
+	public function getMapping($URL = "", $host = null) {
 
 		$URL = self::is_external_URL($URL) ? parse_url($URL, PHP_URL_PATH) : Director::makeRelative($URL);
 		$URL = self::unify_URL($URL);
@@ -241,7 +241,7 @@ class MisdirectionService {
 	 *	@return array(string, integer)
 	 */
 
-	public function determineFallback($URL) {
+	public function determineFallback($URL = "") {
 
 		// Make sure the CMS module is present.
 
