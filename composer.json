@@ -28,6 +28,7 @@
 				"src/controllers/",
 				"src/extensions/",
 				"src/forms/",
+				"src/middleware/",
 				"src/objects/",
 				"src/filters/",
 				"src/services/"
