@@ -7,17 +7,17 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;
 use SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Extension;
+use SilverStripe\Core\Validation\ValidationResult;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\TextField;
-use SilverStripe\ORM\DataExtension;
-use SilverStripe\ORM\ValidationResult;
 
 /**
  *	This extension provides vanity mapping directly from a page, and automatically creates the appropriate link mappings when replacing the default automated URL handling.
  *	@author Nathan Glasl <nathan@symbiote.com.au>
  */
 
-class SiteTreeMisdirectionExtension extends DataExtension {
+class SiteTreeMisdirectionExtension extends Extension {
 
 	/**
 	 *	This provides link mapping customisation directly from a page.
