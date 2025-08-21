@@ -9,7 +9,7 @@ use SilverStripe\Control\HTTP;
 use SilverStripe\Core\ClassInfo;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Convert;
-use SilverStripe\ORM\ArrayList;
+use SilverStripe\Model\List\ArrayList;
 use SilverStripe\SiteConfig\SiteConfig;
 use Symbiote\Multisites\Multisites;
 
