@@ -8,6 +8,7 @@ use SilverStripe\Control\Director;
 use SilverStripe\Control\HTTP;
 use SilverStripe\Core\ClassInfo;
 use SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Validation\ValidationResult;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldGroup;
@@ -262,7 +263,7 @@ class LinkMapping extends DataObject {
 		return $fields;
 	}
 
-	public function validate() {
+	public function validate(): ValidationResult {
 
 		$result = parent::validate();
 
