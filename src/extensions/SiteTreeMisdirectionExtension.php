@@ -9,6 +9,7 @@ use SilverStripe\Control\Director;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Extension;
 use SilverStripe\Core\Validation\ValidationResult;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\TextField;
 
@@ -26,6 +27,10 @@ class SiteTreeMisdirectionExtension extends Extension {
 	private static $has_one = array(
 		'VanityMapping' => LinkMapping::class
 	);
+
+	protected function updateCMSFields(FieldList $fields){
+		$fields->removeByName('VanityMappingID');
+	}
 
 	public function updateSettingsFields($fields) {
 

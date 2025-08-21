@@ -32,14 +32,16 @@ class MisdirectionFallbackExtension extends Extension {
 	 *	Display the appropriate fallback fields.
 	 */
 
-	public function updateCMSFields(FieldList $fields) {
-
+	protected function updateCMSFields(FieldList $fields) {
+		$fields->removeByName('Fallback');
+		$fields->removeByName('FallbackLink');
+		$fields->removeByName('FallbackResponseCode');
 		if($this->owner instanceof SiteConfig) {
 			return $this->owner->updateFields($fields);
 		}
 	}
 
-	public function updateSettingsFields($fields) {
+	protected function updateSettingsFields($fields) {
 
 		// This extension only exists for pages.
 
