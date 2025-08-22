@@ -134,8 +134,6 @@ class SiteTreeMisdirectionExtension extends Extension {
 
 	public function onAfterWrite() {
 
-		parent::onAfterWrite();
-
 		// Determine whether the default automated URL handling has been replaced.
 
 		if(Config::inst()->get(MisdirectionMiddleware::class, 'replace_default')) {
@@ -183,8 +181,6 @@ class SiteTreeMisdirectionExtension extends Extension {
 	 */
 
 	public function onAfterDelete() {
-
-		parent::onAfterDelete();
 
 		// Determine whether this page has been completely removed.
 
