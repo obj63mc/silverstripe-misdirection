@@ -93,7 +93,7 @@ class SiteTreeMisdirectionExtension extends Extension {
 
 		// Retrieve the vanity mapping URL, where this is only possible using the POST variable.
 
-		$vanityURL = (!Controller::has_curr() || is_null($controller = Controller::curr()) || is_null($URL = $controller->getRequest()->postVar('VanityURL'))) ? $this->owner->VanityMapping()->MappedLink : $URL;
+		$vanityURL = (is_null($controller = Controller::curr()) || is_null($URL = $controller->getRequest()->postVar('VanityURL'))) ? $this->owner->VanityMapping()->MappedLink : $URL;
 		$mappingExists = $this->owner->VanityMapping()->exists();
 
 		// Determine whether the vanity mapping URL has been updated.
