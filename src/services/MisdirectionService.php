@@ -95,7 +95,7 @@ class MisdirectionService {
 
 		// Enforce any hostname restriction that may have been defined.
 
-		if(is_null($host) && Controller::has_curr() && ($controller = Controller::curr())) {
+		if(is_null($host) && Controller::curr() != NULL && ($controller = Controller::curr())) {
 			$host = $controller->getRequest()->getHeader('Host');
 		}
 		$temporary = $host;
