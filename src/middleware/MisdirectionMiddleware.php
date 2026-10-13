@@ -89,7 +89,7 @@ class MisdirectionMiddleware implements HTTPMiddleware{
 
 		// Determine whether we're either hooking into a page not found or replacing the default automated URL handling.
 
-		$enforce = $configuration->get(MisdirectionRMisdirectionMiddlewareequestFilter::class, 'enforce_misdirection');
+		$enforce = $configuration->get(MisdirectionMiddleware::class, 'enforce_misdirection');
 		$replace = $configuration->get(MisdirectionMiddleware::class, 'replace_default');
 		if(($error || $enforce || $replace) && ($map = $this->service->getMappingByRequest($request))) {
 
